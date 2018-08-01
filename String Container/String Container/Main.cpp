@@ -13,8 +13,8 @@ public:
 
 	string(char *str)
 	{
-		char length = strlen(str);
-		this->symbols = new char[length];
+		int length = strlen(str);
+		this->symbols = new char[length + 1];
 	}
 
 
