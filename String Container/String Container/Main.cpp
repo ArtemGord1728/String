@@ -23,11 +23,15 @@ public:
 		symbols[length] = '\0';
 	}
 
+	string operator + (string &first)
+	{
+
+	}
 
 private:
 	char *symbols;
-	/*char *str_1;
-	char *str_2;*/
+	char *str_1;
+	char *str_2;
 };
 
 
