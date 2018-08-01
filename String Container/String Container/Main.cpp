@@ -20,6 +20,7 @@ public:
 		{
 			symbols[i] = str[i];
 		}
+		symbols[length] = '\0';
 	}
 
 
