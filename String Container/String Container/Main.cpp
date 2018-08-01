@@ -10,13 +10,18 @@ public:
 		symbols = nullptr;
 	}
 
+
 	string(char *str)
 	{
-		symbols = str;
+		char length = strlen(str);
+		this->symbols = new char[length];
 	}
+
 
 private:
 	char *symbols;
+	/*char *str_1;
+	char *str_2;*/
 };
 
 
