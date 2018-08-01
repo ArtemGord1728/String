@@ -15,6 +15,11 @@ public:
 	{
 		int length = strlen(str);
 		this->symbols = new char[length + 1];
+
+		for (int i = 0; i < length; i++)
+		{
+			symbols[i] = str[i];
+		}
 	}
 
 
