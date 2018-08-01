@@ -2,43 +2,49 @@
 
 using namespace std;
 
-class string
+class String
 {
 public:
-	string()
+	String()
 	{
-		symbols = nullptr;
+		str = nullptr;
 	}
 
 
-	string(char *str)
+	String (char *str)
 	{
-		int length = strlen(str);
-		this->symbols = new char[length + 1];
+		char length = strlen(str);
+		this->str = new char[length + 1];
 
 		for (int i = 0; i < length; i++)
 		{
-			symbols[i] = str[i];
+			this->str[i] = str[i];
 		}
-		symbols[length] = '\0';
+		this->str[length] = '\0';
 	}
 
-	string operator + (string &first)
+	String operator + (String &first)
 	{
+		
+	}
 
+	~String()
+	{
+		delete[] str;
+		delete[] str_1;
 	}
 
 private:
-	char *symbols;
+	char *str;
 	char *str_1;
-	char *str_2;
 };
 
 
 
 int main()
 {
-
+	char g[] = "Hello";
+	String test_1 = g;
 
 	return 0;
 }
