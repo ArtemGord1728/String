@@ -5,19 +5,19 @@ using namespace std;
 class String
 {
 public:
-	char *str;
-	char *str_1;
+	  char *str;
+	  char *str_1;
 
 	String()
 	{
-		this->str = str;
+		str_1 = nullptr;
 		str = nullptr;
 	}
 
 
 	String (char *str)
 	{
-		char length = strlen(str);
+		int length = strlen(str);
 		this->str = new char[length + 1];
 
 		for (int i = 0; i < length; i++)
@@ -27,26 +27,38 @@ public:
 		this->str[length] = '\0';
 	}
 
+	String operator=(const String &val)
+	{
+		if (this->str != nullptr)
+		{
+			delete[] str;
+		}
+	}
+
+	void Print()
+	{
+		cout  << str_1 << endl;
+	}
+
 
 	~String()
 	{
-		delete[] str;
-		delete[] str_1;
+		delete[] this->str;
 	}
 };
 
-String operator+(String val, String v)
-{
 
-}
 
 int main()
 {
+	setlocale(0, "ru");
+
 	char g[] = "Hello";
 	char q[] = "World";
-	String test_1 = g;
-	String test_2 = q;
-	
+	String test_1(g);
+	String test_2(q);
+
+	test_1 = test_2;
 
 	return 0;
 }
