@@ -59,10 +59,10 @@ public:
 };
 
 
-//String operator+(const String& val, const String& v)
-//{
-//
-//}
+String operator+(const String& val, const String& v)
+{
+	/*return strlen(val.str) + strlen(v.str);*/  // ERROR!
+}
 
 
 int main()
