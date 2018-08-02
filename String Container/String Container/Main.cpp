@@ -33,6 +33,17 @@ public:
 		{
 			delete[] str;
 		}
+
+		int length = strlen(str);
+		this->str = new char[length + 1];
+
+		for (int i = 0; i < length; i++)
+		{
+			this->str[i] = str[i];
+		}
+		this->str[length] = '\0';
+
+		return *this;
 	}
 
 	void Print()
@@ -47,6 +58,11 @@ public:
 	}
 };
 
+
+String operator+(const String& val, const String& v)
+{
+
+}
 
 
 int main()
