@@ -34,12 +34,12 @@ public:
 			delete[] str;
 		}
 
-		int length = strlen(str);
+		int length = strlen(val.str);
 		this->str = new char[length + 1];
 
 		for (int i = 0; i < length; i++)
 		{
-			this->str[i] = str[i];
+			this->str[i] = val.str[i];
 		}
 		this->str[length] = '\0';
 
@@ -59,10 +59,10 @@ public:
 };
 
 
-String operator+(const String& val, const String& v)
-{
-
-}
+//String operator+(const String& val, const String& v)
+//{
+//
+//}
 
 
 int main()
