@@ -6,11 +6,9 @@ class String
 {
 public:
 	char *str;
-	char *str_1;
 
 	String()
 	{
-		str_1 = nullptr;
 		str = nullptr;
 	}
 
@@ -46,6 +44,12 @@ public:
 		return *this;
 	}
 
+	String operator+(const String &obj_1)
+	{
+		String newStr;
+		int this_Length = strlen(obj_1.str) + strlen(obj_1.str);
+	}
+
 	void Print()
 	{
 		cout << str << endl;
@@ -76,6 +80,6 @@ int main()
 
 	test_1.Print();
 
-
+	system("pause");
 	return 0;
 }
