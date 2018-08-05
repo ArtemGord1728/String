@@ -47,7 +47,26 @@ public:
 	String operator+(const String &obj_1)
 	{
 		String newStr;
-		int this_Length = strlen(obj_1.str) + strlen(obj_1.str);
+		int this_Length = strlen(str);
+		int other_Length = strlen(obj_1.str);
+
+		newStr.str = new char[this_Length + other_Length + 1]; // хранится динам. массив с длинами строк и в конце добавляется детерминирующий ноль
+
+		int i = 0;
+		for (; i < this_Length; i++)
+		{
+			newStr.str[i] = this->str[i];
+		}
+
+		int j = 0;
+		for (; j < other_Length; j++, i++)
+		{
+			newStr.str[i] = obj_1.str[j];
+		}
+
+		newStr.str[this_Length + other_Length] = '\0';
+		return newStr;
+
 	}
 
 	void Print()
@@ -63,11 +82,6 @@ public:
 };
 
 
-//String operator+(const String& val, const String& v)
-//{
-//	
-//}
-
 
 int main()
 {
@@ -77,8 +91,8 @@ int main()
 	char q[] = "World";
 	String test_1(g);
 	String test_2(q);
-
-	test_1.Print();
+	String res;
+	res = test_1 + test_2;
 
 	system("pause");
 	return 0;
