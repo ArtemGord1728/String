@@ -48,7 +48,7 @@ public:
 
 	void Print()
 	{
-		cout << str_1 << endl;
+		cout << str << endl;
 	}
 
 
@@ -74,7 +74,8 @@ int main()
 	String test_1(g);
 	String test_2(q);
 
-	test_1 = test_2;
+	test_1.Print();
+
 
 	return 0;
 }
