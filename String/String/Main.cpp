@@ -29,6 +29,8 @@ public:
 
 	String(const String &val_1)
 	{
+
+
 		length = strlen(val_1.str);
 		this->str = new char[length + 1];
 
@@ -37,15 +39,9 @@ public:
 			this->str[i] = val_1.str[i];
 		}
 		this->str[length] = '\0';
+
 	}
 
-
-	String(String &&other)
-	{
-		this->length = other.length;
-		this->str = other.str;
-		other.str = nullptr;
-	}
 
 
 	String& operator=(const String &val)
@@ -54,6 +50,7 @@ public:
 		{
 			delete[] str;
 		}
+
 
 		length = strlen(val.str);
 		this->str = new char[length + 1];
