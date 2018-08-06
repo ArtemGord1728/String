@@ -6,16 +6,18 @@ class String
 {
 public:
 	char *str;
+	int length;
 
 	String()
 	{
 		str = nullptr;
+		length = 0;
 	}
 
 
 	String(char *str)
 	{
-		int length = strlen(str);
+	    length = strlen(str);
 		this->str = new char[length + 1];
 
 		for (int i = 0; i < length; i++)
@@ -25,14 +27,26 @@ public:
 		this->str[length] = '\0';
 	}
 
-	String operator=(const String &val)
+	String(const String &val_1)
+	{
+		length = strlen(val_1.str);
+		this->str = new char[length + 1];
+
+		for (int i = 0; i < length; i++)
+		{
+			this->str[i] = val_1.str[i];
+		}
+		this->str[length] = '\0';
+	}
+
+	String& operator=(const String &val)
 	{
 		if (this->str != nullptr)
 		{
 			delete[] str;
 		}
 
-		int length = strlen(val.str);
+		length = strlen(this->str);
 		this->str = new char[length + 1];
 
 		for (int i = 0; i < length; i++)
@@ -44,7 +58,7 @@ public:
 		return *this;
 	}
 
-	String operator+(const String &obj_1)
+	String& operator+(const String &obj_1)
 	{
 		String newStr;
 		int this_Length = strlen(str);
@@ -69,15 +83,10 @@ public:
 
 	}
 
-	void Print()
-	{
-		cout << str << endl;
-	}
-
 
 	~String()
 	{
-		delete[] this->str;
+		delete[] str;
 	}
 };
 
