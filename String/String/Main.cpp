@@ -17,7 +17,7 @@ public:
 
 	String(char *str)
 	{
-	    length = strlen(str);
+		length = strlen(str);
 		this->str = new char[length + 1];
 
 		for (int i = 0; i < length; i++)
