@@ -39,6 +39,15 @@ public:
 		this->str[length] = '\0';
 	}
 
+
+	String(String &&other)
+	{
+		this->length = other.length;
+		this->str = other.str;
+		other.str = nullptr;
+	}
+
+
 	String& operator=(const String &val)
 	{
 		if (this->str != nullptr)
@@ -46,7 +55,7 @@ public:
 			delete[] str;
 		}
 
-		length = strlen(this->str);
+		length = strlen(val.str);
 		this->str = new char[length + 1];
 
 		for (int i = 0; i < length; i++)
@@ -86,7 +95,7 @@ public:
 
 	~String()
 	{
-		delete[] str;
+		delete[] this->str;
 	}
 };
 
