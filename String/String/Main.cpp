@@ -91,7 +91,12 @@ public:
 
 	bool operator ==(const String &obj)
 	{
-		return str == obj.str;
+		return this->str == obj.str;
+	}
+
+	bool operator!=(const String &obj)
+	{
+		return this->str != obj.str;
 	}
 
 
@@ -113,7 +118,7 @@ int main()
 	String test_2(q);
 	//String res;
 
-	bool res = test_1 == test_2;
+	bool res = test_1 != test_2;
 
 	cout << res << endl;
 
