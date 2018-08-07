@@ -89,6 +89,11 @@ public:
 
 	}
 
+	bool operator ==(const String &obj)
+	{
+		return str == obj.str;
+	}
+
 
 	~String()
 	{
@@ -103,11 +108,14 @@ int main()
 	setlocale(0, "ru");
 
 	char g[] = "Hello";
-	char q[] = "World";
+	char q[] = "Hello";
 	String test_1(g);
 	String test_2(q);
-	String res;
-	res = test_1 + test_2;
+	//String res;
+
+	bool res = test_1 == test_2;
+
+	cout << res << endl;
 
 	system("pause");
 	return 0;
