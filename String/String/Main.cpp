@@ -91,12 +91,12 @@ public:
 
 	bool operator ==(const String &obj)
 	{
-		return this->str == obj.str;
+		return this->length == obj.length;
 	}
 
 	bool operator!=(const String &obj)
 	{
-		return this->str != obj.str;
+		return this->length != obj.length;
 	}
 
 
