@@ -116,7 +116,6 @@ int main()
 	char q[] = "Hello";
 	String test_1(g);
 	String test_2(q);
-	//String res;
 
 	bool res = test_1 != test_2;
 
