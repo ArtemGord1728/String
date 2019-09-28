@@ -40,6 +40,9 @@ public:
 	}
 
 	char& operator[] (const int index) {
+		if (index < 0) {
+			throw new std::bad_exception;
+		}
 		return string_buffer[index];
 	}
 
@@ -119,7 +122,7 @@ int main()
 	String test_1 = "hello";
 	String test_2 = " world";
 
-	cout << test_1[0] << endl;
+	cout << test_1[4] << endl;
 
 	system("pause");
 	return 0;
