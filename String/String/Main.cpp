@@ -17,7 +17,7 @@ public:
 	String(const char* str)
 	{
 		size_buffer = strlen(str);
-		this->string_buffer = new char[size_buffer + 1];
+		string_buffer = new char[size_buffer + 1];
 
 		for (int i = 0; i < size_buffer; i++)
 		{
@@ -29,7 +29,7 @@ public:
 	String(const String &val_1)
 	{
 		size_buffer = strlen(val_1.string_buffer);
-		this->string_buffer = new char[size_buffer + 1];
+		string_buffer = new char[size_buffer + 1];
 
 		for (int i = 0; i < size_buffer; i++)
 		{
@@ -39,7 +39,9 @@ public:
 
 	}
 
-
+	char& operator[] (const int index) {
+		return string_buffer[index];
+	}
 
 	String& operator=(const String &val)
 	{
@@ -117,7 +119,7 @@ int main()
 	String test_1 = "hello";
 	String test_2 = " world";
 
-	cout << test_1 << test_2 << endl;
+	cout << test_1[0] << endl;
 
 	system("pause");
 	return 0;
