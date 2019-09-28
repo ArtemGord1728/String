@@ -77,7 +77,7 @@ public:
 		int this_Length = strlen(string_buffer);
 		int other_Length = strlen(obj_1.string_buffer);
 
-		newStr.string_buffer = new char[this_Length + other_Length + 1]; // хранится динам. массив с длинами строк и в конце добавляется детерминирующий ноль
+		newStr.string_buffer = new char[this_Length + other_Length + 1];
 
 		int i = 0;
 		for (; i < this_Length; i++)
